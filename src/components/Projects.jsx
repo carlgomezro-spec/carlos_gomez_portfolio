@@ -6,7 +6,7 @@ const projects = [
     category: "FULL STACK DEVELOPMENT",
     description:
       "A booking platform for tattoo studios, built with React, Express and PostgreSQL.",
-    image: "/images/tattoo-booking.jpg",
+    image: "/images/tattoo-booking.webp",
     year: "2026",
     link: "#"
   },
@@ -16,7 +16,7 @@ const projects = [
     category: "FRONTEND DEVELOPMENT",
     description:
       "A digital experience exploring urban architecture through interactive design.",
-    image: "/images/metropolis.jpg",
+    image: "/images/metropolis.webp",
     year: "2026",
     link: "#"
   },
@@ -26,7 +26,7 @@ const projects = [
     category: "DIGITAL STRATEGY",
     description:
       "Digital campaigns, brand identity and creative strategies focused on meaningful results.",
-    image: "/images/branding.jpg",
+    image: "/images/branding.webp",
     year: "2026",
     link: "#"
   }

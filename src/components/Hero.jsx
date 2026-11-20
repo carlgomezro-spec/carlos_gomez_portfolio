@@ -9,7 +9,7 @@ function Hero() {
 
         <span className="hero-availability">
           <span className="availability-dot"></span>
-          AVAILABLE FOR OPPORTUNITIES
+         
         </span>
       </div>
 
