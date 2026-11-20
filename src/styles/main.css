@@ -1,0 +1,34 @@
+
+/* RESET GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f4f1eb;
+  color: #202020;
+  font-family: Arial, sans-serif;
+}
+
+/* VARIABLES GLOBALES */
+
+:root {
+  --background: #f4f1eb;
+  --text: #202020;
+  --accent: #a5a18e;
+  --secondary: #77756e;
+}
+
+/* CONTENEDOR GENERAL */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
