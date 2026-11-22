@@ -58,10 +58,6 @@ function Contact() {
 
         </div>
 
-        <span className="contact-location">
-          MADRID, SPAIN
-        </span>
-
       </div>
 
     </section>
