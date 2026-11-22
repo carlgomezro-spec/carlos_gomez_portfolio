@@ -1,16 +1,88 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+# Carlos Gómez — Portfolio
 
-Currently, two official plugins are available:
+Personal portfolio showcasing my work and experience across frontend development, digital design and creative projects.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Built to bring together technology, design and digital strategy through clean interfaces and meaningful digital experiences.
 
-## React Compiler
+## About Me
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I'm Carlos Gómez, a digital creative based in Madrid, Spain.
 
-## Expanding the Oxlint configuration
+With a background in Digital Marketing and Project Management, combined with training in Full Stack Development, I enjoy transforming ideas into functional, intuitive and visually engaging digital products.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+I'm particularly interested in frontend development, UI/UX and the intersection between design and technology.
+
+## Featured Projects
+
+### 01. Tattoo Booking App
+A full-stack booking platform for tattoo studios, built with React, Express and PostgreSQL.
+
+### 02. Metropolis Underground
+A frontend development project exploring urban architecture through digital design and interactive experiences.
+
+### 03. Digital Marketing & Branding
+A selection of projects involving digital strategy, brand identity and creative campaigns.
+
+## Tech Stack
+
+**Frontend**
+- HTML5
+- CSS3
+- JavaScript
+- React
+- Vite
+
+**Backend**
+- Node.js
+- Express
+- PostgreSQL
+- MongoDB
+
+**Tools & Design**
+- Git & GitHub
+- Figma
+- Adobe Photoshop
+- Adobe Illustrator
+
+## Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/carlgomezro-spec/carlos-portfolio.git
+cd carlos-portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Open `http://localhost:5173` in your browser.
+
+## Built With
+
+- React
+- Vite
+- CSS
+
+## Contact
+
+**Carlos Gómez Rodríguez**
+
+Madrid, Spain
+
+- GitHub: [@carlgomezro-spec](https://github.com/carlgomezro-spec)
+- LinkedIn: [Add your LinkedIn profile](https://www.linkedin.com/)
+
+---
+
+Designed and developed by Carlos Gómez.
