@@ -22,7 +22,7 @@ body {
 :root {
   --background: #f4f1eb;
   --text: #202020;
-  --accent: #a5a18e;
+  --accent: #9aa696;
   --secondary: #77756e;
 }
 
@@ -35,20 +35,17 @@ body {
 
 
 
-/* =========================
-   HERO SECTION
-========================= */
+
+/* HERO SECTION */
 
 .hero {
   min-height: 100vh;
-  padding: 35px 6%;
+  padding: 110px 6% 35px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
 }
-
-/* TOP */
 
 .hero-top {
   display: flex;
@@ -72,39 +69,38 @@ body {
   border-radius: 50%;
 }
 
-/* MAIN CONTENT */
-
 .hero-content {
   display: grid;
-  grid-template-columns: 1fr 250px;
-  align-items: end;
-  gap: 30px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 38%);
+  align-items: center;
+  gap: 50px;
   margin: auto 0;
-  padding: 80px 0;
+  padding: 55px 0;
+}
+
+.hero-main {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  min-width: 0;
 }
 
 .hero-title h1 {
-  font-size: clamp(75px, 14vw, 200px);
-  line-height: 1;
-  letter-spacing: -0.09em;
-  font-weight: 700;
+  font-size: clamp(65px, 9.5vw, 145px);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+  font-weight: 800;
 }
 
 .hero-title h1 span {
   color: var(--accent);
 }
 
-/* DESCRIPTION */
-
-.hero-description {
-  padding-bottom: 10px;
-}
-
 .hero-description p {
   font-size: 13px;
   line-height: 1.7;
   letter-spacing: 1px;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 
 .hero-role {
@@ -114,7 +110,20 @@ body {
   color: var(--secondary);
 }
 
-/* BOTTOM */
+.hero-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: #d5d5cb;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
 
 .hero-bottom {
   display: flex;
@@ -134,13 +143,12 @@ body {
   opacity: 0.5;
 }
 
-/* RESPONSIVE */
+/* HERO RESPONSIVE */
 
 @media (max-width: 768px) {
-
   .hero {
-    padding: 25px 6%;
-    min-height: 90vh;
+    padding: 100px 6% 25px;
+    min-height: auto;
   }
 
   .hero-top {
@@ -150,15 +158,16 @@ body {
 
   .hero-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 35px;
+    padding: 65px 0;
   }
 
   .hero-title h1 {
-    font-size: clamp(65px, 16vw, 120px);
+    font-size: clamp(58px, 13vw, 100px);
   }
 
-  .hero-description {
-    max-width: 300px;
+  .hero-main {
+    gap: 30px;
   }
 
   .hero-description p {
@@ -166,9 +175,35 @@ body {
     margin-bottom: 20px;
   }
 
+  .hero-image {
+    max-width: 100%;
+    aspect-ratio: 4 / 5;
+  }
+
   .hero-bottom {
     font-size: 9px;
   }
+}
+
+
+/* BOTTOM */
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.hero-bottom a {
+  color: var(--text);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.hero-bottom a:hover {
+  opacity: 0.5;
 }
 
 
@@ -210,7 +245,7 @@ body {
 }
 
 .about-content h2 span {
-  color: #a5a18e;
+  color: #9aa696;
 }
 
 /* DESCRIPTION */

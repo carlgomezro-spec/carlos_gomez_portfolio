@@ -37,7 +37,7 @@ function Contact() {
         <div className="contact-socials">
 
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/carlos-gomez-rodriguez/"
             target="_blank"
             rel="noreferrer"
           >
@@ -45,14 +45,14 @@ function Contact() {
           </a>
 
           <a
-            href="https://github.com/"
+            href="https://github.com/carlgomezro-spec"
             target="_blank"
             rel="noreferrer"
           >
             GITHUB ↗
           </a>
 
-          <a href="mailto:tuemail@gmail.com">
+          <a href="mailto:carl.gomezro@gmail.com">
             EMAIL ↗
           </a>
 
