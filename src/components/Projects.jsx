@@ -1,4 +1,6 @@
 
+import Reveal from "./Reveal";
+
 const projects = [
   {
     number: "01",
@@ -41,7 +43,8 @@ function Projects() {
         <span>SELECTED WORK</span>
       </div>
 
-      <div className="projects-header">
+      <Reveal>
+        <div className="projects-header">
         <h2>
           SELECTED
           <br />
@@ -52,9 +55,11 @@ function Projects() {
           A selection of projects combining
           technology, design and digital strategy.
         </p>
-      </div>
+        </div>
+      </Reveal>
 
-      <div className="projects-grid">
+      <Reveal>
+        <div className="projects-grid">     
 
         {projects.map((project) => (
 
@@ -103,7 +108,8 @@ function Projects() {
 
         ))}
 
-      </div>
+        </div>
+        </Reveal>
 
     </section>
   );

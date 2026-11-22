@@ -1,3 +1,4 @@
+import Reveal from "./Reveal";
 
 function Contact() {
   return (
@@ -8,7 +9,8 @@ function Contact() {
         <span>GET IN TOUCH</span>
       </div>
 
-      <div className="contact-content">
+      <Reveal>
+        <div className="contact-content">
 
         <p className="contact-intro">
           HAVE A PROJECT IN MIND?
@@ -27,7 +29,8 @@ function Contact() {
           LET'S TALK <span>↗</span>
         </a>
 
-      </div>
+        </div>
+        </Reveal>
 
       <div className="contact-bottom">
 

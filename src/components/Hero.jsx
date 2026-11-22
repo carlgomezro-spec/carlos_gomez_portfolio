@@ -3,9 +3,6 @@ function Hero() {
     <section className="hero" id="home">
 
       <div className="hero-top">
-        <span className="hero-location">
-          MADRID, SPAIN
-        </span>
 
         <span className="hero-availability">
           <span className="availability-dot"></span>
