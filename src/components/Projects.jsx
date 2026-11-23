@@ -85,6 +85,8 @@ function Projects() {
               <img
                 src={project.image}
                 alt={project.title}
+                loading="lazy"
+                decoding="async"
               />
 
               <span className="project-number">

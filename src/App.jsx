@@ -1,8 +1,8 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TattooBooking from "./components/TattooBooking";
 
 import Navbar from "./components/Navbar";
+import ScrollManager from "./components/ScrollManager";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -22,6 +22,7 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollManager />
       <Navbar />
 
       <Routes>
