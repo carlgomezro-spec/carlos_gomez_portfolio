@@ -23,7 +23,7 @@ function Contact() {
         </h2>
 
         <a
-          href="mailto:tuemail@gmail.com"
+          href="mailto:carl.gomezro@gmail.com"
           className="contact-button"
         >
           LET'S TALK <span>↗</span>

@@ -1,7 +1,8 @@
+
 function Navbar() {
   return (
     <nav className="navbar">
-
+      
       <a href="#home" className="navbar-logo">
         <span>.</span> 
       </a>

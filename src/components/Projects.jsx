@@ -1,5 +1,6 @@
 
 import Reveal from "./Reveal";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -10,7 +11,7 @@ const projects = [
       "A booking platform for tattoo studios, built with React, Express and PostgreSQL.",
     image: "/images/tattoo-booking.webp",
     year: "2026",
-    link: "#"
+    link: "/projects/tattoo-booking"
   },
   {
     number: "02",
@@ -20,7 +21,7 @@ const projects = [
       "A digital experience exploring urban architecture through interactive design.",
     image: "/images/metropolis.webp",
     year: "2026",
-    link: "#"
+    link: "/projects/metropolis"
   },
   {
     number: "03",
@@ -29,8 +30,18 @@ const projects = [
     description:
       "Digital campaigns, brand identity and creative strategies focused on meaningful results.",
     image: "/images/branding.webp",
-    year: "2026",
-    link: "#"
+    year: "2025",
+    link: "/projects/branding"
+  },
+   {
+    number: "04",
+    title: "Other Design Projects",
+    category: "DIGITAL STRATEGY",
+    description:
+      "Digital campaigns, brand identity and creative strategies focused on meaningful results.",
+    image: "/images/otherprojects.webp",
+    year: "2025",
+    link: "/projects/other"
   }
 ];
 
@@ -63,8 +74,8 @@ function Projects() {
 
         {projects.map((project) => (
 
-          <a
-            href={project.link}
+         <Link
+            to={project.link}
             className="project-card"
             key={project.number}
           >
@@ -104,8 +115,8 @@ function Projects() {
 
             </div>
 
-          </a>
-
+          </Link>
+          
         ))}
 
         </div>

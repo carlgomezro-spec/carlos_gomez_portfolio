@@ -759,3 +759,327 @@ section {
     transition: none;
   }
 }
+
+/* CASE STUDY — TATTOO BOOKING */
+
+.project-page {
+  background: var(--background);
+  color: var(--text);
+}
+
+/* HERO */
+
+.case-hero {
+  padding: 145px 6% 100px;
+}
+
+.case-heading {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ccc9c0;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.case-hero h1 {
+  font-size: clamp(90px, 18vw, 240px);
+  line-height: 0.76;
+  letter-spacing: -0.1em;
+  margin: 100px 0 75px;
+}
+
+.case-hero h1 span,
+.case-intro h2 span,
+.case-visual-heading h2 span,
+.case-development h2 span,
+.case-footer h2 span {
+  color: var(--accent);
+}
+
+.case-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 65px;
+}
+
+.case-meta span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  color: var(--secondary);
+  margin-bottom: 15px;
+}
+
+.case-meta p {
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.case-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #dedbd3;
+}
+
+.case-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* SHARED SECTION LABEL */
+
+.case-section-label {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc9c0;
+  padding-bottom: 22px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+/* INTRO */
+
+.case-intro {
+  padding: 100px 6% 140px;
+}
+
+.case-intro-content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 70px;
+  align-items: end;
+  padding-top: 85px;
+}
+
+.case-intro h2,
+.case-visual-heading h2,
+.case-development h2 {
+  font-size: clamp(55px, 9vw, 120px);
+  line-height: 0.88;
+  letter-spacing: -0.08em;
+}
+
+.case-intro-text p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+/* UX / WIREFRAMING */
+
+.case-visual-section {
+  padding: 100px 6% 130px;
+  background: #eae7e0;
+}
+
+.case-visual-heading {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 60px;
+  align-items: end;
+  padding: 85px 0 65px;
+}
+
+.case-visual-heading p,
+.case-development-content > p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--secondary);
+}
+
+.case-image {
+  width: 100%;
+  overflow: hidden;
+  background: #f4f1eb;
+}
+
+.case-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.case-wireframes-main {
+  margin-bottom: 25px;
+}
+
+.case-wireframes-main img {
+  max-height: 750px;
+}
+
+.case-image-pair {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.case-image-pair .case-image {
+  aspect-ratio: 4 / 3;
+}
+
+/* DEVELOPMENT */
+
+.case-development {
+  padding: 110px 6%;
+}
+
+.case-development-content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 60px;
+  align-items: end;
+  padding: 85px 0 65px;
+}
+
+.case-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-top: 1px solid #ccc9c0;
+  padding-top: 30px;
+}
+
+.case-tech-list span {
+  border: 1px solid #aaa69c;
+  border-radius: 30px;
+  padding: 12px 18px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+/* FEATURES */
+
+.case-features {
+  padding: 100px 6% 130px;
+  background: #202020;
+  color: #f4f1eb;
+}
+
+.case-features .case-section-label {
+  border-color: #555;
+}
+
+.case-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px 40px;
+  padding-top: 85px;
+}
+
+.case-features-grid > div > span {
+  color: var(--accent);
+  font-size: 11px;
+}
+
+.case-features-grid h3 {
+  font-size: 23px;
+  margin: 22px 0 12px;
+  letter-spacing: -0.7px;
+}
+
+.case-features-grid p {
+  color: #aaa79f;
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 250px;
+}
+
+/* FOOTER */
+
+.case-footer {
+  padding: 100px 6% 70px;
+}
+
+.case-footer > span {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.case-footer h2 {
+  font-size: clamp(90px, 17vw, 220px);
+  line-height: 0.8;
+  letter-spacing: -0.1em;
+  margin: 80px 0;
+}
+
+.case-footer a {
+  display: inline-block;
+  color: var(--text);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .case-hero {
+    padding: 120px 6% 70px;
+  }
+
+  .case-hero h1 {
+    font-size: clamp(80px, 19vw, 140px);
+    margin: 75px 0 55px;
+  }
+
+  .case-meta {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 20px;
+  }
+
+  .case-cover {
+    aspect-ratio: 4 / 3;
+  }
+
+  .case-intro,
+  .case-visual-section,
+  .case-development,
+  .case-features {
+    padding: 80px 6%;
+  }
+
+  .case-intro-content,
+  .case-visual-heading,
+  .case-development-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-top: 60px;
+  }
+
+  .case-image-pair {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .case-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 20px;
+    padding-top: 60px;
+  }
+
+  .case-footer {
+    padding: 80px 6% 50px;
+  }
+
+  .case-footer h2 {
+    font-size: clamp(85px, 19vw, 130px);
+    margin: 65px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .case-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
