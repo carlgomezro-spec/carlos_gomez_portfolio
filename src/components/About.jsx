@@ -48,11 +48,6 @@ function About() {
       <div className="about-details">
 
         <div className="about-detail">
-          <span>LOCATION</span>
-          <p>Madrid, Spain</p>
-        </div>
-
-        <div className="about-detail">
           <span>FOCUS</span>
           <p>Development / Design / Digital</p>
         </div>
