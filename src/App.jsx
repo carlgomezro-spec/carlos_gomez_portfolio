@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import TattooBooking from "./components/TattooBooking";
+import CaseStudy from "./components/CaseStudy";
 
 import Navbar from "./components/Navbar";
 import ScrollManager from "./components/ScrollManager";
@@ -27,8 +28,9 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/projects/tattoo-booking" element={<TattooBooking />}
-/>
+        <Route path="/projects/tattoo-booking" element={<TattooBooking />} />
+        <Route path="/projects/:slug" element={<CaseStudy />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );

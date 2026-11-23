@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 function TattooBooking() {
   return (
@@ -263,13 +264,17 @@ function TattooBooking() {
           YOU<span>.</span>
         </h2>
 
-        <a
-          href="https://github.com/carlgomezro-spec/nto-booking-app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          VIEW ON GITHUB ↗
-        </a>
+                <div className="case-footer-links">
+          <a
+            href="https://github.com/carlgomezro-spec/nto-booking-app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            VIEW ON GITHUB ↗
+          </a>
+          <Link to="/projects/metropolis">NEXT PROJECT: METROPOLIS UNDERGROUND →</Link>
+          <Link to="/#projects">ALL PROJECTS</Link>
+        </div>
 
       </section>
 
