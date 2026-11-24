@@ -7,7 +7,8 @@ function ScrollManager() {
 
   useEffect(() => {
     if (!hash) {
-      window.scrollTo(0, 0);
+      // "instant" evita que el scroll suave del CSS haga un recorrido visible hasta arriba
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
       return;
     }
 

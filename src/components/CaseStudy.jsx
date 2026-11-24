@@ -1,6 +1,8 @@
-import { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { caseStudies, getNextProject } from "../data/caseStudies";
+import Reveal from "./Reveal";
+import AnimatedTitle from "./AnimatedTitle";
 
 function CaseStudy() {
   const { slug } = useParams();
@@ -19,40 +21,48 @@ function CaseStudy() {
 
   const { heroLines, meta, cover, intro, highlights } = project;
   const next = getNextProject(project.slug);
-  const longTitle = Math.max(...heroLines.map((l) => l.length)) > 8;
+  const longestLine = Math.max(...heroLines.map((l) => l.length));
 
   return (
     <main className="project-page">
 
       {/* HERO */}
-      <section className="case-hero">
+      <section className="case-hero" style={{ "--chars": longestLine }}>
 
         <div className="case-heading">
           <span>SELECTED WORK — {project.number}</span>
           <span>{project.year}</span>
         </div>
 
-        <h1 className={longTitle ? "case-title-long" : undefined}>
-          {heroLines.map((line, i) => (
-            <Fragment key={line}>
-              {line}
-              {i < heroLines.length - 1 ? <br /> : <span>.</span>}
-            </Fragment>
-          ))}
-        </h1>
+        <AnimatedTitle
+          as="h1"
+          onLoad
+          lines={heroLines.map((line, i) =>
+            i === heroLines.length - 1 ? (
+              <>
+                {line}
+                <span>.</span>
+              </>
+            ) : (
+              line
+            )
+          )}
+        />
 
         <div className="case-meta" style={{ "--cols": meta.length }}>
-          {meta.map((group) => (
-            <div key={group.label}>
+          {meta.map((group, i) => (
+            <Reveal key={group.label} delay={i * 120}>
               <span>{group.label}</span>
               {group.items.map((item) => (
                 <p key={item}>{item}</p>
               ))}
-            </div>
+            </Reveal>
           ))}
         </div>
 
-        <div className={`case-cover${cover.fit === "contain" ? " case-cover--contain" : ""}`}>
+        <Reveal
+          className={`case-cover reveal--clip${cover.fit === "contain" ? " case-cover--contain" : ""}`}
+        >
           <img
             src={cover.src}
             alt={cover.alt}
@@ -62,7 +72,7 @@ function CaseStudy() {
               objectPosition: cover.position || "center",
             }}
           />
-        </div>
+        </Reveal>
 
       </section>
 
@@ -76,24 +86,19 @@ function CaseStudy() {
 
         <div className="case-intro-content">
 
-          <h2>
-            {intro.headline.map((line, i) => (
-              <Fragment key={line}>
-                {line.split(/(\{[^}]+\})/).map((part, j) =>
-                  part.startsWith("{") ? (
-                    <span key={j}>{part.slice(1, -1)}</span>
-                  ) : (
-                    part
-                  )
-                )}
-                {i < intro.headline.length - 1 && <br />}
-              </Fragment>
-            ))}
-          </h2>
+          <AnimatedTitle
+            lines={intro.headline.map((line) =>
+              line.split(/(\{[^}]+\})/).map((part, j) =>
+                part.startsWith("{") ? <span key={j}>{part.slice(1, -1)}</span> : part
+              )
+            )}
+          />
 
           <div className="case-intro-text">
-            {intro.paragraphs.map((text) => (
-              <p key={text}>{text}</p>
+            {intro.paragraphs.map((text, i) => (
+              <Reveal as="p" key={text} delay={i * 150}>
+                {text}
+              </Reveal>
             ))}
           </div>
 
@@ -111,11 +116,11 @@ function CaseStudy() {
 
         <div className="case-features-grid">
           {highlights.items.map((item, i) => (
-            <div key={item.title}>
+            <Reveal key={item.title} delay={(i % 3) * 120}>
               <span>{String(i + 1).padStart(2, "0")}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
 
@@ -126,16 +131,19 @@ function CaseStudy() {
 
         <span>END OF PROJECT — {project.number}</span>
 
-        <h2>
-          THANK
-          <br />
-          YOU<span>.</span>
-        </h2>
+        <AnimatedTitle
+          lines={[
+            "THANK",
+            <>
+              YOU<span>.</span>
+            </>,
+          ]}
+        />
 
-        <div className="case-footer-links">
+        <Reveal className="case-footer-links">
           <Link to={`/projects/${next.slug}`}>NEXT PROJECT: {next.title.toUpperCase()} →</Link>
           <Link to="/#projects">ALL PROJECTS</Link>
-        </div>
+        </Reveal>
 
       </section>
 

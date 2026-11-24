@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Reveal from "./Reveal";
+import AnimatedTitle from "./AnimatedTitle";
 
 function TattooBooking() {
   return (
@@ -12,49 +14,55 @@ function TattooBooking() {
           <span>2026</span>
         </div>
 
-        <h1>
-          NTO
-          <br />
-          BOOKING<span>.</span>
-        </h1>
+        <AnimatedTitle
+          as="h1"
+          onLoad
+          lines={[
+            "NTO",
+            <>
+              BOOKING<span>.</span>
+            </>,
+          ]}
+        />
 
         <div className="case-meta">
 
-          <div>
+          <Reveal delay={0}>
             <span>ROLE / SERVICES</span>
             <p>Product Design</p>
             <p>UX/UI Design</p>
             <p>Full Stack Development</p>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delay={120}>
             <span>TOOLS</span>
             <p>Figma</p>
             <p>React / Vite</p>
             <p>Node.js / Express</p>
             <p>PostgreSQL</p>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delay={240}>
             <span>PROJECT TYPE</span>
             <p>Personal Project</p>
             <p>End-to-end development</p>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delay={360}>
             <span>YEAR / LOCATION</span>
             <p>2026</p>
             <p>Madrid, Spain</p>
-          </div>
+          </Reveal>
 
         </div>
 
-        <div className="case-cover">
+        <Reveal className="case-cover reveal--clip">
           <img
             src="/images/tattoo-booking.webp"
             alt="NTO Booking application presentation"
+            fetchPriority="high"
           />
-        </div>
+        </Reveal>
 
       </section>
 
@@ -68,13 +76,16 @@ function TattooBooking() {
 
         <div className="case-intro-content">
 
-          <h2>
-            A BETTER WAY
-            <br />
-            TO <span>BOOK.</span>
-          </h2>
+          <AnimatedTitle
+            lines={[
+              "A BETTER WAY",
+              <>
+                TO <span>BOOK.</span>
+              </>,
+            ]}
+          />
 
-          <div className="case-intro-text">
+          <Reveal className="case-intro-text" delay={200}>
             <p>
               NTO Booking is a digital product designed
               to simplify appointment management for
@@ -94,7 +105,7 @@ function TattooBooking() {
               the initial concept and UX/UI design
               to the complete full-stack development.
             </p>
-          </div>
+          </Reveal>
 
         </div>
 
@@ -109,42 +120,51 @@ function TattooBooking() {
         </div>
 
         <div className="case-visual-heading">
-          <h2>
-            FROM IDEA
-            <br />
-            TO <span>WIREFRAMES.</span>
-          </h2>
+          <AnimatedTitle
+            lines={[
+              "FROM IDEA",
+              <>
+                TO <span>WIREFRAMES.</span>
+              </>,
+            ]}
+          />
 
-          <p>
+          <Reveal as="p" delay={200}>
             I started by defining the structure of the
             application in Figma, mapping the main
             user journeys and organizing the key screens
             before moving into development.
-          </p>
+          </Reveal>
         </div>
 
-        <div className="case-image case-wireframes-main">
+        <Reveal className="case-image case-wireframes-main reveal--clip">
           <img
             src="/images/ux-register.webp"
+            loading="lazy"
+            decoding="async"
             alt="NTO Booking initial wireframes in Figma"
           />
-        </div>
+        </Reveal>
 
         <div className="case-image-pair">
 
-          <div className="case-image">
+          <Reveal className="case-image reveal--clip" delay={0}>
             <img
               src="/images/ux-discover.webp"
+              loading="lazy"
+              decoding="async"
               alt="Tattoo discovery wireframes"
             />
-          </div>
+          </Reveal>
 
-          <div className="case-image">
+          <Reveal className="case-image reveal--clip" delay={150}>
             <img
               src="/images/ux-booking.webp"
+              loading="lazy"
+              decoding="async"
               alt="Search and booking wireframes"
             />
-          </div>
+          </Reveal>
 
         </div>
 
@@ -159,28 +179,31 @@ function TattooBooking() {
         </div>
 
         <div className="case-development-content">
-          <h2>
-            FROM DESIGN
-            <br />
-            TO <span>CODE.</span>
-          </h2>
+          <AnimatedTitle
+            lines={[
+              "FROM DESIGN",
+              <>
+                TO <span>CODE.</span>
+              </>,
+            ]}
+          />
 
-          <p>
+          <Reveal as="p" delay={200}>
             Once the structure and user experience
             were defined, I brought the concept to life
             by developing the complete application.
             I worked across the frontend, backend,
             database and external integrations.
-          </p>
+          </Reveal>
         </div>
 
         <div className="case-tech-list">
-          <span>REACT</span>
-          <span>NODE.JS</span>
-          <span>EXPRESS</span>
-          <span>POSTGRESQL</span>
-          <span>GOOGLE OAUTH</span>
-          <span>GOOGLE CALENDAR</span>
+          <Reveal as="span" delay={0}>REACT</Reveal>
+          <Reveal as="span" delay={80}>NODE.JS</Reveal>
+          <Reveal as="span" delay={160}>EXPRESS</Reveal>
+          <Reveal as="span" delay={240}>POSTGRESQL</Reveal>
+          <Reveal as="span" delay={320}>GOOGLE OAUTH</Reveal>
+          <Reveal as="span" delay={400}>GOOGLE CALENDAR</Reveal>
         </div>
 
       </section>
@@ -195,59 +218,59 @@ function TattooBooking() {
 
         <div className="case-features-grid">
 
-          <div>
+          <Reveal delay={0}>
             <span>01</span>
             <h3>Authentication</h3>
             <p>
               Account registration, login and
               Google authentication.
             </p>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delay={120}>
             <span>02</span>
             <h3>Tattoo Discovery</h3>
             <p>
               Browse tattoo designs and explore
               available options.
             </p>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delay={240}>
             <span>03</span>
             <h3>Appointment Booking</h3>
             <p>
               Select dates and manage tattoo
               appointment reservations.
             </p>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delay={0}>
             <span>04</span>
             <h3>Google Calendar</h3>
             <p>
               Synchronize appointments with
               Google Calendar.
             </p>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delay={120}>
             <span>05</span>
             <h3>User Profiles</h3>
             <p>
               Manage personal information
               and account details.
             </p>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delay={240}>
             <span>06</span>
             <h3>Admin Dashboard</h3>
             <p>
               Manage registered users and
               appointments.
             </p>
-          </div>
+          </Reveal>
 
         </div>
 
@@ -258,13 +281,16 @@ function TattooBooking() {
 
         <span>END OF PROJECT — 01</span>
 
-        <h2>
-          THANK
-          <br />
-          YOU<span>.</span>
-        </h2>
+        <AnimatedTitle
+          lines={[
+            "THANK",
+            <>
+              YOU<span>.</span>
+            </>,
+          ]}
+        />
 
-                <div className="case-footer-links">
+        <Reveal className="case-footer-links">
           <a
             href="https://github.com/carlgomezro-spec/nto-booking-app"
             target="_blank"
@@ -274,7 +300,7 @@ function TattooBooking() {
           </a>
           <Link to="/projects/metropolis">NEXT PROJECT: METROPOLIS UNDERGROUND →</Link>
           <Link to="/#projects">ALL PROJECTS</Link>
-        </div>
+        </Reveal>
 
       </section>
 

@@ -1,3 +1,7 @@
+import Reveal from "./Reveal";
+import AnimatedTitle from "./AnimatedTitle";
+import { Link } from "react-router-dom";
+
 const projects = [
   {
     number: "01",
@@ -40,3 +44,78 @@ const projects = [
     link: "/projects/other"
   }
 ];
+
+function Projects() {
+  return (
+    <section className="projects" id="projects">
+
+      <Reveal className="section-label">
+        <span>( 02 )</span>
+        <span>SELECTED WORK</span>
+      </Reveal>
+
+      <div className="projects-header">
+
+        <AnimatedTitle lines={["SELECTED", <span>PROJECTS.</span>]} />
+
+        <Reveal as="p" delay={300}>
+          A selection of projects combining
+          technology, design and digital strategy.
+        </Reveal>
+
+      </div>
+
+      <div className="projects-grid">
+
+        {projects.map((project, i) => (
+          <Reveal key={project.number} delay={(i % 2) * 150}>
+            <Link to={project.link} className="project-card">
+
+              <div className="project-image">
+
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+
+                <span className="project-number">
+                  {project.number}
+                </span>
+
+                <span className="project-arrow">
+                  ↗
+                </span>
+
+              </div>
+
+              <div className="project-info">
+
+                <div>
+                  <span className="project-category">
+                    {project.category}
+                  </span>
+
+                  <h3>{project.title}</h3>
+
+                  <p>{project.description}</p>
+                </div>
+
+                <span className="project-year">
+                  {project.year}
+                </span>
+
+              </div>
+
+            </Link>
+          </Reveal>
+        ))}
+
+      </div>
+
+    </section>
+  );
+}
+
+export default Projects;
