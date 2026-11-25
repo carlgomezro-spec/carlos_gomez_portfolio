@@ -3,6 +3,8 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { caseStudies, getNextProject } from "../data/caseStudies";
 import Reveal from "./Reveal";
 import AnimatedTitle from "./AnimatedTitle";
+import LaptopMockup from "./LaptopMockup";
+import PhoneMockup from "./PhoneMockup";
 
 function CaseStudy() {
   const { slug } = useParams();
@@ -19,7 +21,7 @@ function CaseStudy() {
 
   if (!project) return <Navigate to="/" replace />;
 
-  const { heroLines, meta, cover, intro, highlights } = project;
+  const { heroLines, meta, cover, showcase, gallery, github, intro, highlights } = project;
   const next = getNextProject(project.slug);
   const longestLine = Math.max(...heroLines.map((l) => l.length));
 
@@ -60,19 +62,41 @@ function CaseStudy() {
           ))}
         </div>
 
-        <Reveal
-          className={`case-cover reveal--clip${cover.fit === "contain" ? " case-cover--contain" : ""}`}
-        >
-          <img
-            src={cover.src}
-            alt={cover.alt}
-            fetchPriority="high"
-            style={{
-              objectFit: cover.fit || "cover",
-              objectPosition: cover.position || "center",
-            }}
-          />
-        </Reveal>
+        {showcase ? (
+          <Reveal className="case-showcase">
+            <div className="case-showcase-panel" style={{ background: showcase.tint }}>
+              <div className="devices devices--bare">
+                <LaptopMockup image={showcase.laptop.src} alt={showcase.laptop.alt} />
+                <PhoneMockup
+                  className="phone--discover"
+                  src={showcase.phones[0].src}
+                  alt={showcase.phones[0].alt}
+                  delay={200}
+                />
+                <PhoneMockup
+                  className="phone--shop"
+                  src={showcase.phones[1].src}
+                  alt={showcase.phones[1].alt}
+                  delay={350}
+                />
+              </div>
+            </div>
+          </Reveal>
+        ) : (
+          <Reveal
+            className={`case-cover reveal--clip${cover.fit === "contain" ? " case-cover--contain" : ""}`}
+          >
+            <img
+              src={cover.src}
+              alt={cover.alt}
+              fetchPriority="high"
+              style={{
+                objectFit: cover.fit || "cover",
+                objectPosition: cover.position || "center",
+              }}
+            />
+          </Reveal>
+        )}
 
       </section>
 
@@ -106,11 +130,36 @@ function CaseStudy() {
 
       </section>
 
+      {/* GALLERY */}
+      {gallery && (
+        <section className="case-gallery">
+
+          <div className="case-section-label">
+            <span>( 02 )</span>
+            <span>{gallery.label}</span>
+          </div>
+
+          <div className="case-gallery-grid">
+            {gallery.items.map((item, i) => (
+              <Reveal key={item.title} delay={i * 150}>
+                <div className="case-gallery-image">
+                  <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+                </div>
+                <span className="case-gallery-index">{String(i + 1).padStart(2, "0")}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </Reveal>
+            ))}
+          </div>
+
+        </section>
+      )}
+
       {/* HIGHLIGHTS */}
       <section className="case-features">
 
         <div className="case-section-label">
-          <span>( 02 )</span>
+          <span>( {gallery ? "03" : "02"} )</span>
           <span>{highlights.label}</span>
         </div>
 
@@ -141,6 +190,11 @@ function CaseStudy() {
         />
 
         <Reveal className="case-footer-links">
+          {github && (
+            <a href={github} target="_blank" rel="noreferrer">
+              VIEW ON GITHUB ↗
+            </a>
+          )}
           <Link to={`/projects/${next.slug}`}>NEXT PROJECT: {next.title.toUpperCase()} →</Link>
           <Link to="/#projects">ALL PROJECTS</Link>
         </Reveal>

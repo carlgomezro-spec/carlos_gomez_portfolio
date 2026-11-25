@@ -3,17 +3,58 @@
 // "heroLines": el punto final de color se añade solo.
 
 export const caseStudies = [
-  {
+    {
     slug: "metropolis",
     number: "02",
     year: "2026",
     title: "Metropolis Underground",
     heroLines: ["METROPOLIS", "UNDERGROUND"],
+    github: "https://github.com/carlgomezro-spec/metropolis_underground",
     meta: [
       { label: "ROLE / SERVICES", items: ["Frontend Development", "Responsive Design"] },
+      { label: "TOOLS", items: ["React / Vite", "Swiper", "i18next"] },
       { label: "PROJECT TYPE", items: ["Landing page", "Concept project"] },
       { label: "YEAR / LOCATION", items: ["2026", "Madrid, Spain"] },
     ],
+    // Sustituye a "cover": portátil + dos móviles con capturas reales de la web
+    showcase: {
+      tint: "#dfeee6",
+      laptop: {
+        src: "/images/metropolis-desktop.webp",
+        alt: "Metropolis Underground landing page on desktop",
+      },
+      phones: [
+        { src: "/images/metropolis-phone-features.webp", alt: "Features section on mobile" },
+        { src: "/images/metropolis-phone-hero.webp", alt: "Hero section on mobile" },
+      ],
+    },
+    intro: {
+      headline: ["MOVE", "{SMARTER.}"],
+      paragraphs: [
+        "Metropolis Underground is a promotional landing page for a modernised metro app. The app tackles the biggest pain point of commuting: uncertainty during transit.",
+        "Real-time train frequencies, incident alerts and journey planning are one tap away. The page communicates that value in a clear, scannable structure and guides visitors towards a single action: downloading the app.",
+        "I designed it mobile-first and built it as a responsive React interface, from the page structure to the final details.",
+      ],
+    },
+    gallery: {
+      label: "THE APP",
+      items: [
+        { src: "/images/metropolis-feature-1.webp", alt: "Trip details screen of the app", title: "All your journeys in one place", text: "Plan, pay and travel." },
+        { src: "/images/metropolis-feature-2.webp", alt: "Real-time arrivals screen of the app", title: "Real-time insights", text: "See arrivals and choose the best route." },
+        { src: "/images/metropolis-feature-3.webp", alt: "Incidents screen of the app", title: "Stay ahead of disruptions", text: "Know about incidents as they happen." },
+      ],
+    },
+    highlights: {
+      label: "KEY DECISIONS",
+      items: [
+        { title: "Value in seconds", text: "One clear promise at the top, so a commuter understands the app at a glance." },
+        { title: "Three calls to action", text: "Download buttons in the hero, in the feature slides and in the footer meet visitors at different moments." },
+        { title: "Mobile first", text: "Designed for small screens first, with compact slides on mobile and full-width ones on desktop." },
+        { title: "Scope on purpose", text: "Only three capabilities in the carousel. An interactive route planner was left out to keep the focus on downloads." },
+        { title: "Accessible", text: "Semantic HTML, labelled carousel, descriptive alt text and keyboard navigation." },
+        { title: "Light and fast", text: "WebP images and a small set of dependencies for weak connections on the go." },
+      ],
+    },
     cover: {
       src: "/images/metropolis.webp",
       alt: "Metropolis landing page on laptop and mobile",

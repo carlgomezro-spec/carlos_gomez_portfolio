@@ -95,7 +95,7 @@ function Hero() {
         <p>
           Frontend Developer
           <br />
-          &amp; Digital Creative
+          &amp; Digital Designer
         </p>
       </div>
 

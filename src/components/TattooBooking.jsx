@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import AnimatedTitle from "./AnimatedTitle";
+import LaptopMockup from "./LaptopMockup";
+import PhoneMockup from "./PhoneMockup";
 
 function TattooBooking() {
   return (
@@ -56,13 +58,11 @@ function TattooBooking() {
 
         </div>
 
-        <Reveal className="case-cover reveal--clip">
-          <img
+          <img className="case-cover reveal--clip"
             src="/images/tattoo-booking.webp"
             alt="NTO Booking application presentation"
             fetchPriority="high"
           />
-        </Reveal>
 
       </section>
 
@@ -137,36 +137,13 @@ function TattooBooking() {
           </Reveal>
         </div>
 
-        <Reveal className="case-image case-wireframes-main reveal--clip">
-          <img
-            src="/images/ux-register.webp"
+          <img className="case-image case-wireframes-main reveal--clip"
+            src="/images/ux-flow.webp"
             loading="lazy"
             decoding="async"
-            alt="NTO Booking initial wireframes in Figma"
+            alt="NTO Booking wireframe flow: welcome, register, discover, search, book and confirmation"
           />
-        </Reveal>
-
-        <div className="case-image-pair">
-
-          <Reveal className="case-image reveal--clip" delay={0}>
-            <img
-              src="/images/ux-discover.webp"
-              loading="lazy"
-              decoding="async"
-              alt="Tattoo discovery wireframes"
-            />
-          </Reveal>
-
-          <Reveal className="case-image reveal--clip" delay={150}>
-            <img
-              src="/images/ux-booking.webp"
-              loading="lazy"
-              decoding="async"
-              alt="Search and booking wireframes"
-            />
-          </Reveal>
-
-        </div>
+    
 
       </section>
 
@@ -195,6 +172,30 @@ function TattooBooking() {
             I worked across the frontend, backend,
             database and external integrations.
           </Reveal>
+        </div>
+
+              <div className="devices">
+
+          <LaptopMockup
+            src="/videos/nto-booking-demo.mp4"
+            poster="/images/nto-booking-demo-poster.webp"
+            label="SCREEN RECORDING — LOGIN, BOOKING AND GOOGLE CALENDAR SYNC"
+          />
+
+          <PhoneMockup
+            className="phone--discover"
+            src="/images/nto-phone-discover.webp"
+            alt="NTO Booking discover screen on mobile"
+            delay={200}
+          />
+
+          <PhoneMockup
+            className="phone--shop"
+            src="/images/nto-phone-shop.webp"
+            alt="NTO Booking shop screen on mobile"
+            delay={350}
+          />
+
         </div>
 
         <div className="case-tech-list">

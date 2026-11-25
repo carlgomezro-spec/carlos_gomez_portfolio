@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 // Barra fina en la parte superior que indica cuánto has bajado en la página
-function ScrollProgress() {
+function ScrollProgress() {//localhost:5173/images/carlos-hero-wide.webp
   const barRef = useRef(null);
 
   useEffect(() => {
