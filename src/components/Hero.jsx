@@ -93,9 +93,9 @@ function Hero() {
       <div className="hero-role">
         <span className="hero-role-arrow" aria-hidden="true">↘</span>
         <p>
-          Frontend Developer
+          Designer 
           <br />
-          &amp; Digital Designer
+          &amp; Frontend Developer
         </p>
       </div>
 
