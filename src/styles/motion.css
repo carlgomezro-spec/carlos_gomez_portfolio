@@ -804,6 +804,113 @@
   }
 }
 
+/* Tablero de Figma de Metropolis: en móvil se desliza, un poco más alto para leerse */
+@media (max-width: 768px) {
+  .case-wireframes-main--board img {
+    height: 440px;
+  }
+}
+
+/* ---------- BRANDING: HOJA Y SLIDES ---------- */
+
+.case-showcase-panel:has(.case-showcase-sheet) {
+  padding: 5%;
+}
+
+.case-showcase-sheet {
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.4);
+}
+
+.case-gallery-grid--wide {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.case-gallery-grid--wide .case-gallery-image {
+  aspect-ratio: 16 / 9;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 24px 40px -28px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .case-showcase-panel:has(.case-showcase-sheet) {
+    padding: 6% 4%;
+  }
+
+  .case-gallery-grid--wide {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-gallery-grid--editorial {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.case-gallery-grid--editorial .case-gallery-image {
+  aspect-ratio: 4 / 3;
+  border-radius: 2px;
+  background: #292929;
+  box-shadow: 0 24px 40px -28px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .case-gallery-grid--editorial {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Otros proyectos: el panel de la revista usa el mismo gris oscuro que su fondo */
+.case-cover--dark {
+  background: #292929;
+}
+
+/* Titular de wireframes: algo más pequeño para que "TO WIREFRAMES." quepa en una línea en portátiles */
+.case-visual-heading h2 {
+  font-size: clamp(55px, 7.6vw, 112px);
+}
+
+/* ---------- EMBED DE BEHANCE ---------- */
+
+.case-embed {
+  padding: 100px 6% 110px;
+  background: #eae7e0;
+}
+
+.case-embed-frame {
+  margin-top: 60px;
+  height: 720px;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 24px 40px -28px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.case-embed-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.case-embed-link {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+  .case-embed { padding: 70px 6% 80px; }
+  .case-embed-frame { margin-top: 40px; height: 520px; }
+}
+
 
 /* ---------- MOVIMIENTO REDUCIDO ---------- */
 

@@ -21,7 +21,14 @@ function CaseStudy() {
 
   if (!project) return <Navigate to="/" replace />;
 
-  const { heroLines, meta, cover, showcase, gallery, github, intro, highlights } = project;
+  const { heroLines, meta, cover, showcase, wireframes, gallery, embed, github, intro, highlights } = project;
+
+  // Numeración de secciones: la introducción es siempre la 01
+  let sectionNumber = 1;
+  const wireframesNumber = wireframes ? String(++sectionNumber).padStart(2, "0") : null;
+  const galleryNumber = gallery ? String(++sectionNumber).padStart(2, "0") : null;
+  const embedNumber = embed ? String(++sectionNumber).padStart(2, "0") : null;
+  const highlightsNumber = String(++sectionNumber).padStart(2, "0");
   const next = getNextProject(project.slug);
   const longestLine = Math.max(...heroLines.map((l) => l.length));
 
@@ -65,26 +72,35 @@ function CaseStudy() {
         {showcase ? (
           <Reveal className="case-showcase">
             <div className="case-showcase-panel" style={{ background: showcase.tint }}>
-              <div className="devices devices--bare">
-                <LaptopMockup image={showcase.laptop.src} alt={showcase.laptop.alt} />
-                <PhoneMockup
-                  className="phone--discover"
-                  src={showcase.phones[0].src}
-                  alt={showcase.phones[0].alt}
-                  delay={200}
+              {showcase.image ? (
+                <img
+                  className={`case-showcase-sheet${showcase.image.narrow ? " case-showcase-sheet--narrow" : ""}`}
+                  src={showcase.image.src}
+                  alt={showcase.image.alt}
+                  fetchPriority="high"
                 />
-                <PhoneMockup
-                  className="phone--shop"
-                  src={showcase.phones[1].src}
-                  alt={showcase.phones[1].alt}
-                  delay={350}
-                />
-              </div>
+              ) : (
+                <div className="devices devices--bare">
+                  <LaptopMockup image={showcase.laptop.src} alt={showcase.laptop.alt} />
+                  <PhoneMockup
+                    className="phone--discover"
+                    src={showcase.phones[0].src}
+                    alt={showcase.phones[0].alt}
+                    delay={200}
+                  />
+                  <PhoneMockup
+                    className="phone--shop"
+                    src={showcase.phones[1].src}
+                    alt={showcase.phones[1].alt}
+                    delay={350}
+                  />
+                </div>
+              )}
             </div>
           </Reveal>
         ) : (
-          <Reveal
-            className={`case-cover reveal--clip${cover.fit === "contain" ? " case-cover--contain" : ""}`}
+                   <div
+            className={`case-cover${cover.fit === "contain" ? " case-cover--contain" : ""}${cover.dark ? " case-cover--dark" : ""}`}
           >
             <img
               src={cover.src}
@@ -95,7 +111,7 @@ function CaseStudy() {
                 objectPosition: cover.position || "center",
               }}
             />
-          </Reveal>
+          </div>
         )}
 
       </section>
@@ -130,16 +146,51 @@ function CaseStudy() {
 
       </section>
 
+      {/* WIREFRAMES */}
+      {wireframes && (
+        <section className="case-visual-section">
+
+          <div className="case-section-label">
+            <span>( {wireframesNumber} )</span>
+            <span>{wireframes.label}</span>
+          </div>
+
+          <div className="case-visual-heading">
+            <AnimatedTitle
+              lines={wireframes.heading.map((line) =>
+                line.split(/(\{[^}]+\})/).map((part, j) =>
+                  part.startsWith("{") ? <span key={j}>{part.slice(1, -1)}</span> : part
+                )
+              )}
+            />
+
+            <Reveal as="p" delay={200}>
+              {wireframes.text}
+            </Reveal>
+          </div>
+
+                  <div className="case-image case-wireframes-main case-wireframes-main--board">
+            <img
+              src={wireframes.image.src}
+              alt={wireframes.image.alt}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+        </section>
+      )}
+
       {/* GALLERY */}
       {gallery && (
         <section className="case-gallery">
 
           <div className="case-section-label">
-            <span>( 02 )</span>
+            <span>( {galleryNumber} )</span>
             <span>{gallery.label}</span>
           </div>
 
-          <div className="case-gallery-grid">
+          <div className={`case-gallery-grid${gallery.variant ? ` case-gallery-grid--${gallery.variant}` : ""}`}>
             {gallery.items.map((item, i) => (
               <Reveal key={item.title} delay={i * 150}>
                 <div className="case-gallery-image">
@@ -155,11 +206,39 @@ function CaseStudy() {
         </section>
       )}
 
+      {/* EMBED (Behance) */}
+{embed && (
+  <section className="case-embed">
+
+    <div className="case-section-label">
+      <span>( {embedNumber} )</span>
+      <span>{embed.label}</span>
+    </div>
+
+    <Reveal className="case-embed-frame">
+      <iframe
+        src={embed.src}
+        title={embed.title}
+        loading="lazy"
+        allowFullScreen
+        allow="clipboard-write"
+        referrerPolicy="strict-origin-when-cross-origin"
+        frameBorder="0"
+      />
+    </Reveal>
+
+    <a className="case-embed-link" href={embed.href} target="_blank" rel="noreferrer">
+      OPEN ON BEHANCE ↗
+    </a>
+
+  </section>
+)}
+
       {/* HIGHLIGHTS */}
       <section className="case-features">
 
         <div className="case-section-label">
-          <span>( {gallery ? "03" : "02"} )</span>
+          <span>( {highlightsNumber} )</span>
           <span>{highlights.label}</span>
         </div>
 
